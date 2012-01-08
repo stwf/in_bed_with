@@ -12,4 +12,8 @@ module InBedWith
   def self.config(&block)
     yield self
   end
+
+  def self.method_missing(method, *args, &block)
+    "InBedWith::#{method.to_s.camelize}".constantize.new(*args).code
+  end
 end
