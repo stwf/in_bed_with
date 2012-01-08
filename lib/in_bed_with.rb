@@ -6,6 +6,8 @@ require 'active_support/inflector'
 
 require 'in_bed_with/analytics'
 
+require 'in_bed_with/railtie' if defined?(Rails)
+
 module InBedWith
   mattr_accessor :analytics_property_id
 
