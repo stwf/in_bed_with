@@ -31,7 +31,7 @@ module InBedWith
     private
       def attribute_missing(attribute)
         full_name = attribute.to_s.camelize
-        "Please set a #{self.class.name.demodulize} #{full_name} through config.#{self.class.module_attr(attribute)} or by supplying :#{attribute} when calling in_bed_with.#{self.class.name.demodulize.underscore}."
+        "Please set #{self.class.name.demodulize} #{full_name} through config.#{self.class.module_attr(attribute)} or by supplying :#{attribute} when calling in_bed_with.#{self.class.name.demodulize.underscore}."
       end
   end
 end
