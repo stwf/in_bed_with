@@ -22,14 +22,14 @@ module InBedWith
       self.class.attributes.each do |attribute, options|
         value = attributes[attribute] || InBedWith.send(self.class.module_attr(attribute))
 
-        raise ArgumentError, attribute_missing(attribute) unless value || options[:optional]
+        raise ArgumentError, missing(attribute) unless value || options[:optional]
 
         self.send "#{attribute}=", value
       end
     end
 
     private
-      def attribute_missing(attribute)
+      def missing(attribute)
         "Please set #{self.class.name.demodulize} #{attribute.to_s.camelize} through config.#{self.class.module_attr(attribute)} or by supplying :#{attribute} when calling in_bed_with.#{self.class.name.demodulize.underscore}."
       end
   end
