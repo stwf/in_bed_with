@@ -4,6 +4,7 @@ require 'bundler/setup'
 require 'active_support/core_ext'
 require 'active_support/inflector'
 
+require 'in_bed_with/base'
 require 'in_bed_with/analytics'
 require 'in_bed_with/gauges'
 
