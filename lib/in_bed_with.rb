@@ -11,9 +11,6 @@ require 'in_bed_with/gauges'
 require 'in_bed_with/railtie' if defined?(Rails)
 
 module InBedWith
-  mattr_accessor :analytics_property_id
-  mattr_accessor :gauges_site_id
-
   def self.config(&block)
     yield self
   end
