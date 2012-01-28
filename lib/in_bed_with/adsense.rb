@@ -1,10 +1,10 @@
 module InBedWith
   class Adsense < Base
     register :client
-    register :slot
-    register :ad_type, optional: true
-    register :width,   optional: true
-    register :height,  optional: true
+    register :ad_slot
+    register :ad_type,   optional: true
+    register :ad_width,  optional: true
+    register :ad_height, optional: true
 
     AD_TYPES = {
       button:           { width: 125, height: 125 },
@@ -22,18 +22,18 @@ module InBedWith
     }
 
     def code
-      "<script type=\"text/javascript\">google_ad_client = '#{client}'; google_ad_slot = '#{slot}'; google_ad_width = #{properties[:width]}; google_ad_height = #{properties[:height]};</script><script type=\"text/javascript\" src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\"></script>"
+      "<script type=\"text/javascript\">google_ad_client = '#{client}'; google_ad_slot = '#{ad_slot}'; google_ad_width = #{properties[:width]}; google_ad_height = #{properties[:height]};</script><script type=\"text/javascript\" src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\"></script>"
     end
 
   private
 
     def properties
-      if width && height
-        { width: width, height: height }
+      if ad_width && ad_height
+        { width: ad_width, height: ad_height }
       elsif ad_type
-        AD_TYPES[ad_type] or raise ArgumentError, "Ad type '#{ad_type}' is not known: Please use width and height parameters instead."
+        AD_TYPES[ad_type] or raise ArgumentError, "Ad type '#{ad_type}' is not known: Please use ad_width and ad_height parameters instead."
       else
-        raise ArgumentError, 'Please set either type or height/width of the ad.'
+        raise ArgumentError, 'Please set either ad_type or ad_height/ad_width of the ad.'
       end
     end
   end
