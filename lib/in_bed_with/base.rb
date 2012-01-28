@@ -33,4 +33,10 @@ module InBedWith
         "Please set #{self.class.name.demodulize} #{attribute.to_s.camelize} through config.#{self.class.module_attr(attribute)} or by supplying :#{attribute} when calling in_bed_with.#{self.class.name.demodulize.underscore}."
       end
   end
+
+  module Helper
+    def in_bed_with
+      InBedWith
+    end
+  end
 end
