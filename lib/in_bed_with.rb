@@ -18,6 +18,7 @@ module InBedWith
   end
 
   def self.method_missing(method, *args, &block)
-    "InBedWith::#{method.to_s.camelize}".constantize.new(*args).code
+    str = "InBedWith::#{method.to_s.camelize}".constantize.new(*args).code
+    str.respond_to?(:html_safe) ? str.html_safe : str
   end
 end
