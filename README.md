@@ -87,6 +87,7 @@ in_bed_with.analytics
 * `property_id`: The ID of the property. Usually a string formatted along the likes of `UA-xxxxxxx-x`, where `x` is a digit.
 
 **Example:**
+
 ```
 # initializer
 InBedWith.config do |config|
@@ -119,6 +120,7 @@ end
 * `ad_height`: The height of the ad. **Does not need to be set if `ad_type` is set**. Usually a 2 or 3-digit number.
 
 **Example:**
+
 ```
 # initializer
 InBedWith.config do |config|
@@ -136,6 +138,7 @@ end
 * `site_id`: The ID of the site. (As far as I know) a 24-character hexadecimal string.
 
 **Example:**
+
 ```
 # initializer
 InBedWith.config do |config|
