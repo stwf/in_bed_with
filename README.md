@@ -104,18 +104,7 @@ end
 * `client`: The Adsense client id. Usually a string formatted along the likes of `ca-pub–xxxxxxxxxxxxxxxx`, where `x` is a digit.
 * `ad_slot`: The ad slot. Usually a 10-digit number.
 * `ad_type`: The type of the ad. **Does not need to be set if both `ad_width` and `ad_height` are set**. Can be any of (see [here](https://support.google.com/adsense/bin/answer.py?hl=en-GB&answer=185665&topic=29561) for exact sizes):
-	* `:button`
-	* `:half_banner`
-	* `:banner`
-	* `:vertical_banner`
-	* `:leaderboard`
-	* `:skyscraper`
-	* `:wide_skyscraper`
-	* `:small_square`
-	* `:square`
-	* `:small_rectangle`
-	* `:medium_rectangle`
-	* `:large_rectangle`
+	* `:banner`, `:button`, `:half_banner`, `:large_rectangle`, `:leaderboard`, `:medium_rectangle`, `:skyscraper`, `:small_rectangle`, `:small_square`, `:square`, `:vertical_banner`, `:wide_skyscraper`
 * `ad_width`: The width of the ad. **Does not need to be set if `ad_type` is set**. Usually a 2 or 3-digit number.
 * `ad_height`: The height of the ad. **Does not need to be set if `ad_type` is set**. Usually a 2 or 3-digit number.
 
