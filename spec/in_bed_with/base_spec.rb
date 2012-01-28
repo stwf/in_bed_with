@@ -17,6 +17,6 @@ describe InBedWith::Base do
   end
 
   it 'does not raise an exception if an optional attribute is missing' do
-    InBedWith::Test.new(:foo => 'gazonk').code.should == 'foo_with_value_gazonk'
+    InBedWith::Test.new(foo: 'gazonk').code.should == 'foo_with_value_gazonk'
   end
 end
