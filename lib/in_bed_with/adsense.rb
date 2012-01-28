@@ -31,7 +31,7 @@ module InBedWith
       if ad_width && ad_height
         { width: ad_width, height: ad_height }
       elsif ad_type
-        AD_TYPES[ad_type] or raise ArgumentError, "Ad type '#{ad_type}' is not known: Please use ad_width and ad_height parameters instead."
+        AD_TYPES[ad_type.to_sym] or raise ArgumentError, "Ad type '#{ad_type}' is not known: Please use ad_width and ad_height parameters instead."
       else
         raise ArgumentError, 'Please set either ad_type or ad_height/ad_width of the ad.'
       end
