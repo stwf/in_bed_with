@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors     = ['Sebastian von Conrad']
   s.email       = ['sebastian@vonconrad.com']
   s.homepage    = 'http://github.com/vonconrad/in_bed_with'
-  s.summary     = %q{in_bed_with allows popular javascript codes to be embedded into markup}
-  s.description = %q{}
+  s.summary     = %q{in_bed_with embeds popular javascript codes into markup}
+  s.description = %q{in_bed_with allows javascript code embedding of popular services (such as Google Analytics, Google Adsense and Gauges) into Rails views and other markup}
 
   s.rubyforge_project = 'in_bed_with'
 
