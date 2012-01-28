@@ -8,6 +8,7 @@ require 'in_bed_with/base'
 require 'in_bed_with/adsense'
 require 'in_bed_with/analytics'
 require 'in_bed_with/gauges'
+require 'in_bed_with/version'
 
 require 'in_bed_with/railtie' if defined?(Rails)
 
