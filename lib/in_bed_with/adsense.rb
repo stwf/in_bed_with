@@ -2,9 +2,9 @@ module InBedWith
   class Adsense < Base
     register :client
     register :slot
-    register :type,   optional: true
-    register :width,  optional: true
-    register :height, optional: true
+    register :ad_type, optional: true
+    register :width,   optional: true
+    register :height,  optional: true
 
     AD_TYPES = {
       button:           { width: 125, height: 125 },
@@ -30,8 +30,8 @@ module InBedWith
     def properties
       if width && height
         { width: width, height: height }
-      elsif type
-        AD_TYPES[type] or raise ArgumentError, "Ad type '#{type}' is not known: Please use width and height parameters instead."
+      elsif ad_type
+        AD_TYPES[ad_type] or raise ArgumentError, "Ad type '#{ad_type}' is not known: Please use width and height parameters instead."
       else
         raise ArgumentError, 'Please set either type or height/width of the ad.'
       end

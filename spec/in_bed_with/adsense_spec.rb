@@ -26,12 +26,12 @@ describe InBedWith::Adsense do
     end
 
     it 'prints a javascript tag based on a predefined ad type' do
-      js = InBedWith.adsense(client: 'ca-pub-1234567890123456', slot: '1234567890', type: :leaderboard)
+      js = InBedWith.adsense(client: 'ca-pub-1234567890123456', slot: '1234567890', ad_type: :leaderboard)
       js.should == "<script type=\"text/javascript\">google_ad_client = 'ca-pub-1234567890123456'; google_ad_slot = '1234567890'; google_ad_width = 728; google_ad_height = 90;</script><script type=\"text/javascript\" src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\"></script>"
     end
 
     it 'raises an exception if the ad type is not known' do
-      lambda { InBedWith.adsense(client: 'ca-pub-1234567890123456', slot: '1234567890', type: :foobarbaz) }.should raise_exception ArgumentError, /'foobarbaz' is not known/
+      lambda { InBedWith.adsense(client: 'ca-pub-1234567890123456', slot: '1234567890', ad_type: :foobarbaz) }.should raise_exception ArgumentError, /'foobarbaz' is not known/
     end
   end
 end
