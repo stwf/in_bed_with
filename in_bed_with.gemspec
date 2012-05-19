@@ -15,9 +15,11 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = 'in_bed_with'
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.files         = ['lib/in_bed_with.rb','lib/in_bed_with/adsense.rb','lib/in_bed_with/analytics.rb','lib/in_bed_with/base.rb',
+                      'lib/in_bed_with/gauges.rb', 'lib/in_bed_with/quantcast.rb', 'lib/in_bed_with/railtie.rb', 'lib/in_bed_with/sitemeter.rb',
+                      'lib/in_bed_with/version.rb']
+  s.test_files    = []
+  s.executables   = []
   s.require_paths = ['lib']
 
   s.add_dependency 'activesupport', '~> 3.1'
