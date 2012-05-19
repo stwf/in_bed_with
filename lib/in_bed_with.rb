@@ -7,6 +7,8 @@ require 'active_support/inflector'
 require 'in_bed_with/base'
 require 'in_bed_with/adsense'
 require 'in_bed_with/analytics'
+require 'in_bed_with/quantcast'
+require 'in_bed_with/sitemeter'
 require 'in_bed_with/gauges'
 require 'in_bed_with/version'
 
