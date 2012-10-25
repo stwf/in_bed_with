@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    in_bed_with (0.1.0)
+    in_bed_with (0.1.1)
       activesupport (~> 3.1)
 
 GEM

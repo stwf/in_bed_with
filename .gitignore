@@ -4,3 +4,4 @@ pkg/*
 .bundle
 .DS_Store
 *.swp
+RubyGems
