@@ -27,7 +27,7 @@ module InBedWith
       "<script type=\"text/javascript\">google_ad_client = '#{client}'; google_ad_slot = '#{ad_slot}'; google_ad_width = #{properties[:width]}; google_ad_height = #{properties[:height]};</script><script type=\"text/javascript\" src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\"></script>"
     end
     def code
-      if Rails.env.production?
+      if true
         answer = real_code
       else
         answer = "<img src='sample_ads/468x60_image.png'>"
