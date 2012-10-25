@@ -4,6 +4,7 @@ module InBedWith
 
     	def code
 			[
+				'<!-- Quantcast Tag -->',
 				'<script type="text/javascript">',
 				'var _qevents = _qevents || [];',
 
