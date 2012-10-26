@@ -15,6 +15,10 @@ require 'in_bed_with/version'
 require 'in_bed_with/railtie' if defined?(Rails)
 
 module InBedWith
+  module Rails
+    class Engine < ::Rails::Engine
+    end
+  end
   def self.config(&block)
     yield self
   end

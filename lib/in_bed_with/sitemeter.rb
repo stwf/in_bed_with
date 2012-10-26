@@ -3,14 +3,14 @@ module InBedWith
     register :site_name
 
     def code
-    	[
-    		%(<script type="text/javascript" src="http://s13.sitemeter.com/js/counter.js?site=#{site_name}">),
-    		%(</script>),
-    		%(<noscript>),
-    		%(<a href="http://s13.sitemeter.com/stats.asp?site=s13ffiles" target="_top">),
-    		%(<img src="http://s13.sitemeter.com/meter.asp?site=s13ffiles" alt="Site Meter" border="0"/></a>),
-    		%(</noscript>)
-    	].join("")
+%(<!-- Site Meter -->
+<script type="text/javascript" src="http://s10.sitemeter.com/js/counter.js?site=#{site_name}">
+</script>
+<noscript>
+<a href="http://s10.sitemeter.com/stats.asp?site=#{site_name}" target="_top">
+<img src="http://s10.sitemeter.com/meter.asp?site=#{site_name}" alt="Site Meter" border="0"/></a>
+</noscript>
+<!-- Copyright (c)2009 Site Meter -->)
     end
   end
 end

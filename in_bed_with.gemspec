@@ -15,14 +15,13 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = 'in_bed_with'
 
-  s.files         = ['lib/in_bed_with.rb','lib/in_bed_with/adsense.rb','lib/in_bed_with/analytics.rb','lib/in_bed_with/base.rb',
-                      'lib/in_bed_with/gauges.rb', 'lib/in_bed_with/quantcast.rb', 'lib/in_bed_with/railtie.rb', 'lib/in_bed_with/sitemeter.rb',
-                      'lib/in_bed_with/version.rb']
+  s.files         = Dir["{lib,app}/**/*"]
   s.test_files    = []
   s.executables   = []
   s.require_paths = ['lib']
 
   s.add_dependency 'activesupport', '~> 3.1'
+  s.add_dependency 'railties', '~> 3.1'
   s.add_development_dependency 'rails', '~> 3.1'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec', '~> 2.8.0'
