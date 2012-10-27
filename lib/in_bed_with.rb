@@ -17,6 +17,9 @@ require 'in_bed_with/railtie' if defined?(Rails)
 module InBedWith
   module Rails
     class Engine < ::Rails::Engine
+      initializer 'static_assets.load_static_assets' do |app|
+        app.middleware.use ::ActionDispatch::Static, "#{root}/app/assets"
+      end
     end
   end
   def self.config(&block)

@@ -7,6 +7,7 @@ module InBedWith
     register :ad_type,   optional: true
     register :ad_width,  optional: true
     register :ad_height, optional: true
+    register :load_in_development, optional: true
 
     AD_TYPES = {
       button:           { width: 125, height: 125 },
@@ -26,11 +27,12 @@ module InBedWith
     def real_code
       "<script type=\"text/javascript\">google_ad_client = '#{client}'; google_ad_slot = '#{ad_slot}'; google_ad_width = #{properties[:width]}; google_ad_height = #{properties[:height]};</script><script type=\"text/javascript\" src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\"></script>"
     end
-    def code
-      unless ::Rails.env.development?
+    
+    def code      
+      if ( (! ::Rails.env.development?) || (@load_in_development))
         answer = real_code
       else
-        answer = "<img src='468x60_image.png'>"
+        answer = "<img src='images/#{ad_type}.png'>"
       end
       answer
     end
