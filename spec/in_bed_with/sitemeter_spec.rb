@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe InBedWith::Sitemeter do
   it 'prints a javascript tag based on argument' do
-    js = InBedWith.sitemeter(site_name: '15CjNXRBjM')
+    js = InBedWith.sitemeter(site_name: '15CjNXRBjM',site_server: 's10')
     js.should == %(<!-- Site Meter -->
 <script type="text/javascript" src="http://s10.sitemeter.com/js/counter.js?site=15CjNXRBjM">
 </script>
