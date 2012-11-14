@@ -1,6 +1,7 @@
 module InBedWith
   class Sitemeter < Base
     register :site_name
+    register :site_server
 
     def code
 %(<!-- Site Meter -->
