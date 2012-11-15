@@ -14,7 +14,7 @@ describe InBedWith::Sitemeter do
   end
 
   it 'prints a javascript tag based on configuration option' do
-    InBedWith.config { |config| config.sitemeter_site_name = '15CjNXRBjM' }
+    InBedWith.config { |config| config.sitemeter_site_name = '15CjNXRBjM';config.sitemeter_site_server = 's10' }
     js = InBedWith.sitemeter
     js.should == %(<!-- Site Meter -->
 <script type="text/javascript" src="http://s10.sitemeter.com/js/counter.js?site=15CjNXRBjM">

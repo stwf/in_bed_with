@@ -28,11 +28,11 @@ module InBedWith
       "<script type=\"text/javascript\">google_ad_client = '#{client}'; google_ad_slot = '#{ad_slot}'; google_ad_width = #{properties[:width]}; google_ad_height = #{properties[:height]};</script><script type=\"text/javascript\" src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\"></script>"
     end
     
-    def code      
-      if ( (! ::Rails.env.development?) || (@load_in_development))
-        answer = real_code
-      else
+    def code
+      if ( ::Rails.env.development? && @load_in_development )
         answer = "<img src='/images/#{ad_type}.png'>"
+      else
+        answer = real_code
       end
       answer
     end
