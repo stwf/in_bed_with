@@ -29,7 +29,7 @@ module InBedWith
     end
     
     def code
-      if ( ::Rails.env.development? && @load_in_development )
+      if ( ::Rails.env.development? && ! @load_in_development )
         answer = "<img src='/images/#{ad_type}.png'>"
       else
         answer = real_code
