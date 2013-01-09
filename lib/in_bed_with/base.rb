@@ -16,6 +16,7 @@ module InBedWith
       end
     end
 
+    
     def initialize(attributes={})
       attributes.symbolize_keys!
 

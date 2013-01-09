@@ -2,8 +2,19 @@ module InBedWith
   class Sitemeter < Base
     register :site_name
     register :site_server
+    register :load_in_development, optional: true
+
 
     def code
+      if ( ::Rails.env.development? && ! @load_in_development )
+        answer = "<img src='/images/meter.gif'>"
+      else
+        answer = real_code
+      end
+      answer
+    end
+
+    def real_code
 %(<!-- Site Meter -->
 <script type="text/javascript" src="http://#{site_server}.sitemeter.com/js/counter.js?site=#{site_name}">
 </script>

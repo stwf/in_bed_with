@@ -1,8 +1,18 @@
 module InBedWith
 	class Quantcast < Base
     	register :p_code
+    	register :load_in_development, optional: true
 
-    	def code
+    def code
+      if ( ::Rails.env.development? && ! @load_in_development )
+        answer = ""
+      else
+        answer = real_code
+      end
+      answer
+    end
+
+   	def real_code
 %(<!-- Quantcast Tag -->
 <script type="text/javascript">
 var _qevents = _qevents || [];
