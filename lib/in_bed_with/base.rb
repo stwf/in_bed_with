@@ -16,7 +16,10 @@ module InBedWith
       end
     end
 
-    
+    def do_not_display?
+      ( ( ::Rails.env.development? || ::Rails.env.test? ) && ! @load_in_development )
+    end
+
     def initialize(attributes={})
       attributes.symbolize_keys!
 

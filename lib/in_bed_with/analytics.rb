@@ -4,7 +4,7 @@ module InBedWith
     register :load_in_development, optional: true
 
     def code
-      if ( ::Rails.env.development? && ! @load_in_development )
+      if do_not_display?
         answer = ""
       else
         answer = real_code

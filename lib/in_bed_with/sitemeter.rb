@@ -6,7 +6,7 @@ module InBedWith
 
 
     def code
-      if ( ::Rails.env.development? && ! @load_in_development )
+      if do_not_display?
         answer = "<img src='/images/meter.gif'>"
       else
         answer = real_code
